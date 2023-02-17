@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "id":1,
+            "fullname": "onur",
+            "branch": "UX/UI",
+            "hour": 200
+        },
+        {
+            "id":2,
+            "fullname": "serxan",
+            "branch": "marketing",
+            "hour": 100
+        }
+    ]
+}
