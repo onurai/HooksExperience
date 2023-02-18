@@ -2,6 +2,7 @@ import React from 'react'
 import { FaTrashAlt } from 'react-icons/fa';
 import { GrUpdate } from 'react-icons/gr';
 import { useState } from 'react';
+import axios from 'axios';
 
 const HomePage = (props) => {
     const [value, setValue] = useState('');
@@ -12,6 +13,11 @@ const HomePage = (props) => {
     const InputHandler = (e) => {
         setValue(e.target.value)
     } 
+
+    const DeleteHandler = async (id) =>{
+        
+    }
+    DeleteHandler();
       
   return (
     <div className='container mt-2'>
@@ -36,7 +42,11 @@ const HomePage = (props) => {
                                 <td>{user.phone}</td>
                                 <td>
                                     <button className='btn btn-warning me-3 my-1'><GrUpdate/> Update</button>
-                                    <button className='btn btn-danger'><FaTrashAlt/> Delete</button>
+                                    <button onClick={async () => {
+                                        console.log('salam' + user.id)
+                                        await axios.delete(`https://jsonplaceholder.typicode.com/users/${user.id}`)
+                                        
+                                    }} className='btn btn-danger'><FaTrashAlt/> Delete</button>
                                 </td>
                             </tr>
                         )

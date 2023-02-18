@@ -14,7 +14,7 @@ const AddUser = () => {
         name: name,
         phone: phone
       }
-      await axios.post('https://jsonplaceholder.typicode.com/users', newUser)
+      await axios.post('https://jsonplaceholder.typicode.com/users', {newUser})
     }
     addUser();
   }
